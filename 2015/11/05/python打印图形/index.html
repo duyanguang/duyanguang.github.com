@@ -5,19 +5,16 @@
   
   <title>python打印图形 | Yanguang&#39;s blog site</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="python打印图形在一些python面试的时候，有时候会让你打印一些图形，比如菱形之类的。本文就搜集一些这方面的面试题，同时把答案也放在这里。
-【1】一维整形数组[2, 5, 6], 请每行打印2个*， 5个*， 6个*这个题目非常简单，python支持字符 * 数字的方式重复打印字符，所以这个题目就非常简答了。代码如下：123_list = [2, 5, 6]for i in _list:">
+  <meta name="description" content="python打印图形在一些python面试的时候，有时候会让你打印一些图形，比如菱形之类的。本文就搜集一些这方面的面试题，同时把答案也放在这里。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python打印图形">
 <meta property="og:url" content="http://yoursite.com/2015/11/05/python打印图形/index.html">
 <meta property="og:site_name" content="Yanguang's blog site">
-<meta property="og:description" content="python打印图形在一些python面试的时候，有时候会让你打印一些图形，比如菱形之类的。本文就搜集一些这方面的面试题，同时把答案也放在这里。
-【1】一维整形数组[2, 5, 6], 请每行打印2个*， 5个*， 6个*这个题目非常简单，python支持字符 * 数字的方式重复打印字符，所以这个题目就非常简答了。代码如下：123_list = [2, 5, 6]for i in _list:">
-<meta property="og:updated_time" content="2015-11-06T06:45:25.800Z">
+<meta property="og:description" content="python打印图形在一些python面试的时候，有时候会让你打印一些图形，比如菱形之类的。本文就搜集一些这方面的面试题，同时把答案也放在这里。">
+<meta property="og:updated_time" content="2015-11-11T09:06:32.527Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python打印图形">
-<meta name="twitter:description" content="python打印图形在一些python面试的时候，有时候会让你打印一些图形，比如菱形之类的。本文就搜集一些这方面的面试题，同时把答案也放在这里。
-【1】一维整形数组[2, 5, 6], 请每行打印2个*， 5个*， 6个*这个题目非常简单，python支持字符 * 数字的方式重复打印字符，所以这个题目就非常简答了。代码如下：123_list = [2, 5, 6]for i in _list:">
+<meta name="twitter:description" content="python打印图形在一些python面试的时候，有时候会让你打印一些图形，比如菱形之类的。本文就搜集一些这方面的面试题，同时把答案也放在这里。">
   
     <link rel="alternative" href="/atom.xml" title="Yanguang&#39;s blog site" type="application/atom+xml">
   
@@ -224,6 +221,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="python打印图形">python打印图形</h1><p>在一些python面试的时候，有时候会让你打印一些图形，比如菱形之类的。本文就搜集一些这方面的面试题，同时把答案也放在这里。</p>
+<a id="more"></a>
 <p><strong>【1】一维整形数组[2, 5, 6], 请每行打印2个*， 5个*， 6个*</strong><br>这个题目非常简单，python支持<code>字符 * 数字</code>的方式重复打印字符，所以这个题目就非常简答了。<br>代码如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">_list = [<span class="number">2</span>, <span class="number">5</span>, <span class="number">6</span>]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> _list:</span><br><span class="line">    <span class="keyword">print</span> <span class="string">"*"</span> * i</span><br></pre></td></tr></table></figure></p>
 <p><strong>【2】一维整形数组[2, 5, 6], 请每列打印2个*， 5个*， 6个*</strong><br>跟上一题类似，但是变成每列打印，这就有点难度了。先看代码：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">_list = [<span class="number">2</span>, <span class="number">5</span>, <span class="number">6</span>]</span><br><span class="line"></span><br><span class="line">height = max(_list)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(height, <span class="number">0</span>, -<span class="number">1</span>):</span><br><span class="line">    line = []</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> _list:</span><br><span class="line">        <span class="keyword">if</span> j &gt;= i:</span><br><span class="line">            line.append(<span class="string">"*"</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            line.append(<span class="string">" "</span>)</span><br><span class="line">    <span class="keyword">print</span> <span class="string">""</span>.join(line)</span><br></pre></td></tr></table></figure></p>
 <p>解这道题的思路要想像我们在盖房子，这个房子有几个单元，就是列表的长度。但是这个楼有一个特点，每个单元楼的高度是不一样的。最高的单元楼就是列表中最大的那个元素，然后我们就从最高那层楼逐层开始盖房子（向下遍历），跟我们现实中盖房子不太一样。如果我这个单元楼的高度比当前楼层高，我就盖一层（打*号），否则我就不盖（打空格），一直盖到一层为止。<br><strong>【3】设计一个打印菱形的函数</strong><br>这道题就能看到python语言的便利了，如果是其他语言的话，代码可能要多出一倍不止，这道题的关键就是算好数了，在纸上多画几遍就可以了。代码如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">printPyramid</span><span class="params">(level)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(level):</span><br><span class="line">        <span class="keyword">print</span> <span class="string">" "</span> * (level - i - <span class="number">1</span>) + <span class="string">"*"</span> * ((i + <span class="number">1</span>) * <span class="number">2</span> - <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(level - <span class="number">1</span>, <span class="number">0</span>, -<span class="number">1</span>):</span><br><span class="line">        <span class="keyword">print</span> <span class="string">" "</span> * (level - i) + <span class="string">"*"</span> * (<span class="number">2</span> * i -<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">printPyramid(<span class="number">5</span>)</span><br></pre></td></tr></table></figure></p>

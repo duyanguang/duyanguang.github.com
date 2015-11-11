@@ -7,26 +7,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="求100以内的素数这也是面试过程中经常会遇到的问题，这个题目本身不难，先来看一下素数（也叫质数）的定义：
 
-质数（prime number）又称素数，有无限个。一个大于1的自然数，除了1和它本身外，不能被其他自然数整除，换句话说就是该数除了1和它本身以外不再有其他的因数。
-
-从这个定义来看，如果我们要判断一个数n是否是素数，只需要将n对2到n-1求余，如果有余数为零，说明n能被这个数整除，它就不是">
+质数（prime number）又称素数，有无限个。一个大于1的自然数，除了1和它本身外，不能被其他自然数整除，换句话说就是该数除了1和它本身以外不再有其他的因数。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="求100以内的素数">
 <meta property="og:url" content="http://yoursite.com/2015/11/11/求100以内的素数/index.html">
 <meta property="og:site_name" content="Yanguang's blog site">
 <meta property="og:description" content="求100以内的素数这也是面试过程中经常会遇到的问题，这个题目本身不难，先来看一下素数（也叫质数）的定义：
 
-质数（prime number）又称素数，有无限个。一个大于1的自然数，除了1和它本身外，不能被其他自然数整除，换句话说就是该数除了1和它本身以外不再有其他的因数。
-
-从这个定义来看，如果我们要判断一个数n是否是素数，只需要将n对2到n-1求余，如果有余数为零，说明n能被这个数整除，它就不是">
-<meta property="og:updated_time" content="2015-11-11T08:38:13.714Z">
+质数（prime number）又称素数，有无限个。一个大于1的自然数，除了1和它本身外，不能被其他自然数整除，换句话说就是该数除了1和它本身以外不再有其他的因数。">
+<meta property="og:updated_time" content="2015-11-11T09:05:50.089Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="求100以内的素数">
 <meta name="twitter:description" content="求100以内的素数这也是面试过程中经常会遇到的问题，这个题目本身不难，先来看一下素数（也叫质数）的定义：
 
-质数（prime number）又称素数，有无限个。一个大于1的自然数，除了1和它本身外，不能被其他自然数整除，换句话说就是该数除了1和它本身以外不再有其他的因数。
-
-从这个定义来看，如果我们要判断一个数n是否是素数，只需要将n对2到n-1求余，如果有余数为零，说明n能被这个数整除，它就不是">
+质数（prime number）又称素数，有无限个。一个大于1的自然数，除了1和它本身外，不能被其他自然数整除，换句话说就是该数除了1和它本身以外不再有其他的因数。">
   
     <link rel="alternative" href="/atom.xml" title="Yanguang&#39;s blog site" type="application/atom+xml">
   
@@ -236,6 +230,7 @@
 <blockquote>
 <p>质数（prime number）又称素数，有无限个。一个大于1的自然数，除了1和它本身外，不能被其他自然数整除，换句话说就是该数除了1和它本身以外不再有其他的因数。</p>
 </blockquote>
+<a id="more"></a>
 <p>从这个定义来看，如果我们要判断一个数<code>n</code>是否是素数，只需要将<code>n</code>对<code>2</code>到<code>n-1</code>求余，如果有余数为零，说明<code>n</code>能被这个数整除，它就不是素数；所有的数都判断完后，如果没有任何数的余数为<code>0</code>，说明这个数是素数。</p>
 <p>这样我们可以有判断一个数是否是素数的一个方法：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">is_prime</span><span class="params">(n)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> n == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>, n):</span><br><span class="line">        <span class="keyword">if</span> (n % i) == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">True</span></span><br></pre></td></tr></table></figure></p>
 <p>然后，面试官可能就问了，这个方法有没有什么优化的地方呢？看一下我们的算法，<code>n</code>对<code>2</code>到<code>n-1</code>都要计算余数，其实<code>2</code>和<code>3</code>我们知道是素数，就没有必要判断了。省了一点点时间：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">is_prime</span><span class="params">(n)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> n == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">    <span class="keyword">if</span> n == <span class="number">2</span> <span class="keyword">or</span> n == <span class="number">3</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>, n):</span><br><span class="line">        <span class="keyword">if</span> (n % i) == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">True</span></span><br></pre></td></tr></table></figure></p>
