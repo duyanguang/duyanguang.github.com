@@ -3,33 +3,27 @@
 <head>
   <meta charset="utf-8">
   
-  <title>LeetCode --- 2. Reverse Words In A String | Yanguang&#39;s blog site</title>
+  <title>LeetCode --- 4. Valid-Palindrome | Yanguang&#39;s blog site</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="题目链接：Reverse Words in a String
+  <meta name="description" content="题目链接：Valid Palindrome
 
-Given an input string, reverse the string word by word.
-For example,
-Given s = “the sky is blue”,
-return “blue is sky the”.">
+Given a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.
+For example,&amp;quot;A man, a plan, a canal: Panama&amp;quot;is a palindro">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode --- 2. Reverse Words In A String">
-<meta property="og:url" content="http://yoursite.com/2015/11/18/LeetCode-2-Reverse-Words-In-A-String/index.html">
+<meta property="og:title" content="LeetCode --- 4. Valid-Palindrome">
+<meta property="og:url" content="http://yoursite.com/2015/11/19/LeetCode-4-Valid-Palindrome/index.html">
 <meta property="og:site_name" content="Yanguang's blog site">
-<meta property="og:description" content="题目链接：Reverse Words in a String
+<meta property="og:description" content="题目链接：Valid Palindrome
 
-Given an input string, reverse the string word by word.
-For example,
-Given s = “the sky is blue”,
-return “blue is sky the”.">
-<meta property="og:updated_time" content="2015-11-19T03:02:36.738Z">
+Given a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.
+For example,&amp;quot;A man, a plan, a canal: Panama&amp;quot;is a palindro">
+<meta property="og:updated_time" content="2015-11-19T12:28:02.366Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode --- 2. Reverse Words In A String">
-<meta name="twitter:description" content="题目链接：Reverse Words in a String
+<meta name="twitter:title" content="LeetCode --- 4. Valid-Palindrome">
+<meta name="twitter:description" content="题目链接：Valid Palindrome
 
-Given an input string, reverse the string word by word.
-For example,
-Given s = “the sky is blue”,
-return “blue is sky the”.">
+Given a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.
+For example,&amp;quot;A man, a plan, a canal: Panama&amp;quot;is a palindro">
   
     <link rel="alternative" href="/atom.xml" title="Yanguang&#39;s blog site" type="application/atom+xml">
   
@@ -190,11 +184,11 @@ return “blue is sky the”.">
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-LeetCode-2-Reverse-Words-In-A-String" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-LeetCode-4-Valid-Palindrome" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/11/18/LeetCode-2-Reverse-Words-In-A-String/" class="article-date">
-  	<time datetime="2015-11-18T12:13:57.000Z" itemprop="datePublished">2015-11-18</time>
+      <a href="/2015/11/19/LeetCode-4-Valid-Palindrome/" class="article-date">
+  	<time datetime="2015-11-19T12:09:54.000Z" itemprop="datePublished">2015-11-19</time>
 </a>
     </div>
   
@@ -207,7 +201,7 @@ return “blue is sky the”.">
         
   
     <h1 class="article-title" itemprop="name">
-      LeetCode --- 2. Reverse Words In A String
+      LeetCode --- 4. Valid-Palindrome
     </h1>
   
 
@@ -227,17 +221,19 @@ return “blue is sky the”.">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>题目链接：<a href="https://leetcode.com/problems/reverse-words-in-a-string/" target="_blank" rel="external">Reverse Words in a String</a></p>
+        <p>题目链接：<a href="https://leetcode.com/problems/valid-palindrome/" target="_blank" rel="external">Valid Palindrome</a></p>
 <blockquote>
-<p>Given an input string, reverse the string word by word.</p>
-<p>For example,</p>
-<p>Given s = “the sky is blue”,</p>
-<p>return “blue is sky the”.</p>
+<p>Given a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.</p>
+<p>For example,<br><code>&quot;A man, a plan, a canal: Panama&quot;</code>is a palindrome.<br><code>&quot;race a car&quot;</code> is not a palindrome.</p>
+<p><strong>Note</strong>:<br>Have you consider that the string might be empty? This is a good question to ask during an interview.</p>
+<p>For the purpose of this problem, we define empty string as valid palindrome.</p>
 </blockquote>
 <a id="more"></a>
-<p>这道题的要求是将句子（字符串）中的单词反转。没有空格分隔的就是单词，单词间靠空格分隔。输入可能包含前导或尾随空格，但是反转后不应该包含前导或尾随空格。两个单词间可能有多个空格，但是反转后只保留一个间隔的空格。</p>
-<p>做这道题也参考双指针，一个指针<code>i</code>指向单词的开头，一个指针<code>j</code>指向单词的结尾。到结尾的情况需要特殊处理。代码如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">reverseWords</span><span class="params">(self, s)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type s: str</span><br><span class="line">        :rtype: str</span><br><span class="line">        """</span></span><br><span class="line">        s = s.strip()</span><br><span class="line">        lst = []</span><br><span class="line">        i, j = <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> i+j &lt;= len(s):</span><br><span class="line">            <span class="keyword">if</span> i + j == len(s):</span><br><span class="line">                lst.append(s[i:i+j])</span><br><span class="line">                lst.reverse()</span><br><span class="line">                <span class="keyword">return</span> <span class="string">" "</span>.join(lst)</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> s[i] == <span class="string">" "</span>:</span><br><span class="line">                i += <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                j += <span class="number">1</span></span><br><span class="line">                <span class="keyword">if</span> s[i+j-<span class="number">1</span>] == <span class="string">" "</span>:</span><br><span class="line">                    lst.append(s[i:i+j-<span class="number">1</span>])</span><br><span class="line">                    i += j</span><br><span class="line">                    j = <span class="number">0</span></span><br></pre></td></tr></table></figure>
+<p>这道题的要求是判断字符串是否为回文，仅考虑数字和字母（忽略大小写），空串是回文。</p>
+<p>思路比较简单，采用i和j两个指针，分布从左右往中间移动，跳过非数字字母的字符，比较若不同就返回false，直到相遇后返回true。注意一点就是忽略大小写，因此可以将大写字母转化成小写字母后再进行比较。</p>
+<p>时间复杂度：O(n)</p>
+<p>空间复杂度：O(1)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">isPalindrome</span><span class="params">(self, s)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type s: str</span><br><span class="line">        :rtype: bool</span><br><span class="line">        """</span></span><br><span class="line">        s = s.lower()</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> s == <span class="string">""</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line"></span><br><span class="line">        i, j = <span class="number">0</span>, len(s) - <span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> i &lt; j:</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> s[i].isalnum():</span><br><span class="line">                i += <span class="number">1</span></span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> s[j].isalnum():</span><br><span class="line">                j -= <span class="number">1</span></span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> s[i] == s[j]:</span><br><span class="line">                i += <span class="number">1</span></span><br><span class="line">                j -= <span class="number">1</span></span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">True</span></span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -246,18 +242,9 @@ return “blue is sky the”.">
     
 <nav id="article-nav">
   
-    <a href="/2015/11/19/LeetCode-3-Rotate-Array/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          LeetCode-3-Rotate-Array
-        
-      </div>
-    </a>
   
-  
-    <a href="/2015/11/18/LeetCode-1-Two-Sum/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">LeetCode --- 1. Two Sum</div>
+    <a href="/2015/11/19/LeetCode-3-Rotate-Array/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">LeetCode-3-Rotate-Array</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -286,7 +273,7 @@ return “blue is sky the”.">
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="LeetCode-2-Reverse-Words-In-A-String" data-title="LeetCode --- 2. Reverse Words In A String" data-url="http://yoursite.com/2015/11/18/LeetCode-2-Reverse-Words-In-A-String/"></div>
+	<div class="ds-thread" data-thread-key="LeetCode-4-Valid-Palindrome" data-title="LeetCode --- 4. Valid-Palindrome" data-url="http://yoursite.com/2015/11/19/LeetCode-4-Valid-Palindrome/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

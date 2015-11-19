@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>LeetCode --- 3. Rotate Array | Yanguang&#39;s blog site</title>
+  <title>LeetCode-3-Rotate-Array | Yanguang&#39;s blog site</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="题目链接：Rotate Array
 
@@ -12,7 +12,7 @@ For example, with n = 7 and k = 3, the array [1,2,3,4,5,6,7] is rotated to [5,6,
 Note:
 Try to come up as many solut">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode --- 3. Rotate Array">
+<meta property="og:title" content="LeetCode-3-Rotate-Array">
 <meta property="og:url" content="http://yoursite.com/2015/11/19/LeetCode-3-Rotate-Array/index.html">
 <meta property="og:site_name" content="Yanguang's blog site">
 <meta property="og:description" content="题目链接：Rotate Array
@@ -22,9 +22,9 @@ For example, with n = 7 and k = 3, the array [1,2,3,4,5,6,7] is rotated to [5,6,
 Note:
 Try to come up as many solut">
 <meta property="og:image" content="http://7xo4cs.com1.z0.glb.clouddn.com/right_shift.PNG">
-<meta property="og:updated_time" content="2015-11-19T06:40:53.038Z">
+<meta property="og:updated_time" content="2015-11-19T12:38:44.280Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode --- 3. Rotate Array">
+<meta name="twitter:title" content="LeetCode-3-Rotate-Array">
 <meta name="twitter:description" content="题目链接：Rotate Array
 
 Rotate an array of n elements to the right by k steps.
@@ -195,7 +195,7 @@ Try to come up as many solut">
   
     <div class="article-meta">
       <a href="/2015/11/19/LeetCode-3-Rotate-Array/" class="article-date">
-  	<time datetime="2015-11-19T03:11:23.000Z" itemprop="datePublished">2015-11-19</time>
+  	<time datetime="2015-11-19T09:35:07.000Z" itemprop="datePublished">2015-11-19</time>
 </a>
     </div>
   
@@ -208,7 +208,7 @@ Try to come up as many solut">
         
   
     <h1 class="article-title" itemprop="name">
-      LeetCode --- 3. Rotate Array
+      LeetCode-3-Rotate-Array
     </h1>
   
 
@@ -216,6 +216,10 @@ Try to come up as many solut">
       
       <div class="article-info article-info-post">
         
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LeetCode/">LeetCode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日拱一卒/">日拱一卒</a></li></ul>
+	</div>
+
         
 
         <div class="clearfix"></div>
@@ -234,16 +238,11 @@ Try to come up as many solut">
 <p>Could you do it in-place with O(1) extra space?</p>
 </blockquote>
 <a id="more"></a>
-<h4 id="1-_用Python内置方法"><font color="red"><strong>1. 用Python内置方法</strong></font></h4><p>首先尝试用python列表内置方法来解决这个问题，这个能看出python的便利，但肯定不是这个题的题意了。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">rotate</span><span class="params">(self, nums, k)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type nums: List[int]</span><br><span class="line">        :type k: int</span><br><span class="line">        :rtype: void Do not return anything, modify nums in-place instead.</span><br><span class="line">        """</span></span><br><span class="line">        k %= len(nums)</span><br><span class="line">        i = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> i &lt; k:</span><br><span class="line">            item = nums.pop()</span><br><span class="line">            nums.insert(<span class="number">0</span>, item)</span><br><span class="line">            i += <span class="number">1</span></span><br></pre></td></tr></table></figure>
-<p>参考<a href="https://docs.python.org/2/tutorial/datastructures.html" target="_blank" rel="external">list方法</a></p>
-<h4 id="2-_reverse"><font color="red"><strong>2. reverse</strong></font></h4><p>以n - k为界，分别对数组的左右两边执行一次逆置；然后对整个数组执行逆置。</p>
-<p>假设旋转数组1、2、3、4、5，k=2，那么旋转后为：4、5、1、2、3。可以将1、2、3看成向量a，4、5看成向量b，那么旋转ab就生成ba。这个过程，相当于现对a求逆，得到aTb，在对b求逆，得到aTbT，接着整体求逆，得到ba。</p>
-<p>整理一下，全过程分为3部分：</p>
-<p>左部分反转<br>右部分反转<br>整体反转<br>时间复杂度：O(n)</p>
-<p>空间复杂度：O(1)</p>
+<h4 id="1-_用Python内置方法"><font color="red"><strong>1. 用Python内置方法</strong></font></h4><p>首先尝试用python列表内置方法来解决这个问题，这个能看出python的便利，但肯定不是这个题的题意了。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">rotate</span><span class="params">(self, nums, k)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type nums: List[int]</span><br><span class="line">        :type k: int</span><br><span class="line">        :rtype: void Do not return anything, modify nums in-place instead.</span><br><span class="line">        """</span></span><br><span class="line">        k %= len(nums)</span><br><span class="line">        i = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> i &lt; k:</span><br><span class="line">            item = nums.pop()</span><br><span class="line">            nums.insert(<span class="number">0</span>, item)</span><br><span class="line">            i += <span class="number">1</span></span><br></pre></td></tr></table></figure></p>
+<p><a href="https://docs.python.org/2/tutorial/datastructures.html" target="_blank" rel="external">参考list方法</a></p>
+<h4 id="2-_reverse"><font color="red"><strong>2. reverse</strong></font></h4><p>以n - k为界，分别对数组的左右两边执行一次逆置；然后对整个数组执行逆置。<br>假设旋转数组1、2、3、4、5，k=2，那么旋转后为：4、5、1、2、3。可以将1、2、3看成向量a，4、5看成向量b，那么旋转ab就生成ba。这个过程，相当于现对a求逆，得到aTb，在对b求逆，得到aTbT，接着整体求逆，得到ba。<br>整理一下，全过程分为3部分：<br>    左部分反转<br>    右部分反转<br>    整体反转<br>时间复杂度：O(n)<br>空间复杂度：O(1)</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution2</span>:</span></span><br><span class="line">    <span class="comment"># @param nums, a list of integer</span></span><br><span class="line">    <span class="comment"># @param k, num of steps</span></span><br><span class="line">    <span class="comment"># @return nothing, please modify the nums list in-place.</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">rotate</span><span class="params">(self, nums, k)</span>:</span></span><br><span class="line">        n = len(nums)</span><br><span class="line">        k %= n</span><br><span class="line">        self.reverse(nums, <span class="number">0</span>, n - k)</span><br><span class="line">        self.reverse(nums, n - k, n)</span><br><span class="line">        self.reverse(nums, <span class="number">0</span>, n)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">reverse</span><span class="params">(self, nums, start, end)</span>:</span></span><br><span class="line">        <span class="keyword">for</span> x <span class="keyword">in</span> range(start, (start + end) / <span class="number">2</span>):</span><br><span class="line">            nums[x], nums[start + end - x - <span class="number">1</span>] = nums[start + end - x - <span class="number">1</span>], nums[x]</span><br></pre></td></tr></table></figure>
-<h4 id="3-_向右依次移动列表"><font color="red"><strong>3. 向右依次移动列表</strong></font></h4><p>这个方法就是每次向右移动一位，一共移动 k % len(nums) 次。<br><img src="http://7xo4cs.com1.z0.glb.clouddn.com/right_shift.PNG" alt="right_shift"><br>代码如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution3</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">rotate</span><span class="params">(self, nums, k)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type nums: List[int]</span><br><span class="line">        :type k: int</span><br><span class="line">        :rtype: void Do not return anything, modify nums in-place instead.</span><br><span class="line">        """</span></span><br><span class="line">        k %= len(nums);</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> xrange(k):</span><br><span class="line">            temp = nums[len(nums) -<span class="number">1</span>]</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> xrange(len(nums)):</span><br><span class="line">                nums[len(nums) - <span class="number">1</span> - j] = nums[len(nums) - <span class="number">2</span> - j]</span><br><span class="line">            nums[<span class="number">0</span>] = temp</span><br></pre></td></tr></table></figure></p>
+<h4 id="3-_向右依次移动列表"><font color="red"><strong>3. 向右依次移动列表</strong></font></h4><p>这个方法就是每次向右移动一位，一共移动 k % len(nums) 次。?<img src="http://7xo4cs.com1.z0.glb.clouddn.com/right_shift.PNG" alt="right_shift"><br>代码如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution3</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">rotate</span><span class="params">(self, nums, k)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type nums: List[int]</span><br><span class="line">        :type k: int</span><br><span class="line">        :rtype: void Do not return anything, modify nums in-place instead.</span><br><span class="line">        """</span></span><br><span class="line">        k %= len(nums);</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> xrange(k):</span><br><span class="line">            temp = nums[len(nums) -<span class="number">1</span>]</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> xrange(len(nums)):</span><br><span class="line">                nums[len(nums) - <span class="number">1</span> - j] = nums[len(nums) - <span class="number">2</span> - j]</span><br><span class="line">            nums[<span class="number">0</span>] = temp</span><br></pre></td></tr></table></figure></p>
 <hr>
 <p>参考<br><a href="http://www.makuiyu.cn/2015/04/LeetCode_189.%20Rotate%20Array/" target="_blank" rel="external">LeetCode — 189. Rotate Array </a><br><a href="http://bookshadow.com/weblog/2015/02/24/leetcode-rotate-array/" target="_blank" rel="external">LeetCode Rotate Array </a><br><a href="http://articles.leetcode.com/2010/04/rotating-array-in-place.html" target="_blank" rel="external">Rotating an array in place</a><br><a href="http://yucoding.blogspot.hk/2015/03/leetcode-question-rotate-array.html" target="_blank" rel="external">leetcode Question: Rotate Array</a></p>
 
@@ -254,6 +253,15 @@ Try to come up as many solut">
   
     
 <nav id="article-nav">
+  
+    <a href="/2015/11/19/LeetCode-4-Valid-Palindrome/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          LeetCode --- 4. Valid-Palindrome
+        
+      </div>
+    </a>
   
   
     <a href="/2015/11/18/LeetCode-2-Reverse-Words-In-A-String/" id="article-nav-older" class="article-nav-link-wrap">
@@ -286,7 +294,7 @@ Try to come up as many solut">
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="LeetCode-3-Rotate-Array" data-title="LeetCode --- 3. Rotate Array" data-url="http://yoursite.com/2015/11/19/LeetCode-3-Rotate-Array/"></div>
+	<div class="ds-thread" data-thread-key="LeetCode-3-Rotate-Array" data-title="LeetCode-3-Rotate-Array" data-url="http://yoursite.com/2015/11/19/LeetCode-3-Rotate-Array/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
