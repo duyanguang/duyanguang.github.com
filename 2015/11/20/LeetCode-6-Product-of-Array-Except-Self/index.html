@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>LeetCode --- 6. Product of Array Except Self | Yanguang&#39;s blog site</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Given an array of n integers where n &amp;gt; 1, nums, return an array output such that output[i] is equal to the product of all the elements of nums except nums[i].
+Solve it without division and in O(n).">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LeetCode --- 6. Product of Array Except Self">
+<meta property="og:url" content="http://yoursite.com/2015/11/20/LeetCode-6-Product-of-Array-Except-Self/index.html">
+<meta property="og:site_name" content="Yanguang's blog site">
+<meta property="og:description" content="Given an array of n integers where n &amp;gt; 1, nums, return an array output such that output[i] is equal to the product of all the elements of nums except nums[i].
+Solve it without division and in O(n).">
+<meta property="og:updated_time" content="2015-11-20T11:30:46.990Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="LeetCode --- 6. Product of Array Except Self">
+<meta name="twitter:description" content="Given an array of n integers where n &amp;gt; 1, nums, return an array output such that output[i] is equal to the product of all the elements of nums except nums[i].
+Solve it without division and in O(n).">
+  
+    <link rel="alternative" href="/atom.xml" title="Yanguang&#39;s blog site" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/img/logon_cat.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Du Yanguang</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/duyanguang" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/duyanguang" title="weibo">weibo</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Appium/" style="font-size: 10px;">Appium</a> <a href="/tags/LeetCode/" style="font-size: 15px;">LeetCode</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/日拱一卒/" style="font-size: 20px;">日拱一卒</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://funga.cn/">黄佳的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://wyysf.evai.pl/">孙小辉的博客</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的吃货…</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Du Yanguang</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="/img/logon_cat.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Du Yanguang</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/duyanguang" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/duyanguang" title="weibo">weibo</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-LeetCode-6-Product-of-Array-Except-Self" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/11/20/LeetCode-6-Product-of-Array-Except-Self/" class="article-date">
+  	<time datetime="2015-11-20T09:24:21.000Z" itemprop="datePublished">2015-11-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      LeetCode --- 6. Product of Array Except Self
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>Given an array of n integers where n &gt; 1, <code>nums</code>, return an array <code>output</code> such that <code>output[i]</code> is equal to the product of all the elements of <code>nums</code> except <code>nums[i]</code>.</p>
+<p>Solve it <strong>without</strong> division and in <em>O(n)</em>.</p>
+<p>For example, given <code>[1,2,3,4]</code>, return <code>[24,12,8,6]</code>.</p>
+<p><strong>Follow up:</strong><br>Could you solve it with constant space complexity? (Note: The output array <strong>does not</strong> count as extra space for the purpose of space complexity analysis.)</p>
+</blockquote>
+<a id="more"></a>
+<h3 id="题目大意：">题目大意：</h3><p>给定长度为n的整数数组nums，其中n &gt; 1，返回输出数组output，满足output[i]等于除nums[i]之外其余各数的乘积。</p>
+<p>不使用除法，在O(n)时间复杂度内完成此题目。</p>
+<p>例如，给定 [1,2,3,4]，返回 [24,12,8,6]。</p>
+<p>进一步思考：</p>
+<p>你可以在常数空间复杂度内完成题目吗？（注意：输出数组不算在空间复杂度分析中）</p>
+<h3 id="解题思路：">解题思路：</h3><p>首先想到的思路是计算全部数字的乘积，然后分别除以num数组中的每一个数（需要排除数字0）。然而，题目要求不能使用除法。</p>
+<p>下面的解法非常巧妙，参考LeetCode Dicuss</p>
+<p>链接地址：<a href="https://leetcode.com/discuss/46104/simple-java-solution-in-o-n-without-extra-space" target="_blank" rel="external">https://leetcode.com/discuss/46104/simple-java-solution-in-o-n-without-extra-space</a></p>
+<p>由于output[i] = (x0 <em> x1 </em> … <em> xi-1) </em> (xi+1 <em> …. </em> xn-1)</p>
+<p>因此执行两趟循环：</p>
+<p>第一趟正向遍历数组，计算x0 ~ xi-1的乘积</p>
+<p>第二趟反向遍历数组，计算xi+1 ~ xn-1的乘积</p>
+<p>假设有一个数组nums = [<code>a0</code>, <code>a1</code>, <code>a2</code>, <code>a3</code>]。那么output = [<code>a1*a2*a3</code>, <code>a0*a2*a3</code>, <code>a0*a1*a3</code>, <code>a0*a1*a2</code>]。我们看到，这个列表的每个元素为：<br><code>［左边元素乘积］</code>ｘ<code>［右边元素乘积］</code></p>
+<p>于是，这个题目可以分为两步，第一步计算a[i]左边所有元素的乘积，那么这时候：<br><code>left</code> =  [<code>1</code>, <code>a0</code>, <code>a0*a1</code>, <code>a0*a1*a2</code>]<br>因为第一个元素没有左边，用1占位（因为这里计算的是乘法），代码如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">temp = <span class="number">1</span></span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> range(len(nums)-<span class="number">1</span>):</span><br><span class="line">    left *= nums[x]</span><br><span class="line">    left[x + <span class="number">1</span>] *= temp</span><br></pre></td></tr></table></figure></p>
+<p>第二步计算a[i]右边所有元素的乘积：<br><code>right</code> = [<code>a1*a2*a3</code>, <code>a2*a3</code>, <code>a3</code>, <code>1</code>]<br>同理，最后那个元素没有右边，用1占位，代码如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">temp = <span class="number">1</span></span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> range(len(nums)-<span class="number">1</span>, <span class="number">0</span>, -<span class="number">1</span>):</span><br><span class="line">    temp *= nums[x]</span><br><span class="line">    right[x-<span class="number">1</span>] *= temp</span><br></pre></td></tr></table></figure></p>
+<p>然后再遍历left和right，让left[i] * right[i]就是最后的结果：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> range(len(nums)):</span><br><span class="line">    output[x] = left[x] * right[x]</span><br></pre></td></tr></table></figure></p>
+<p>这样需要开辟三个数组空间，其实只需开辟一个output空间即可，然后复用这个空间。最后优化的代码如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">productExceptSelf</span><span class="params">(self, nums)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type nums: List[int]</span><br><span class="line">        :rtype: List[int]</span><br><span class="line">        """</span></span><br><span class="line">        length = len(nums)</span><br><span class="line">        output = [<span class="number">1</span>] * length</span><br><span class="line">        left = <span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> x <span class="keyword">in</span> xrange(length-<span class="number">1</span>):</span><br><span class="line">            left *= nums[x]</span><br><span class="line">            output[x + <span class="number">1</span>] *= left</span><br><span class="line">        right = <span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> x <span class="keyword">in</span> xrange(length -<span class="number">1</span>, <span class="number">0</span> , -<span class="number">1</span>):</span><br><span class="line">            right *= nums[x]</span><br><span class="line">            output[x - <span class="number">1</span>] *= right</span><br><span class="line">        <span class="keyword">return</span> output</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p>参考：<br><a href="http://www.cnblogs.com/Blaxon/p/4685854.html" target="_blank" rel="external">leetcode-Product of Array Except Self</a><br><a href="http://bookshadow.com/weblog/2015/07/16/leetcode-product-array-except-self/" target="_blank" rel="external">[LeetCode]Product of Array Except Self </a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/11/20/LeetCode-5-Container-With-Most-Water/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">LeetCode --- 5. Container With Most Water</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="LeetCode-6-Product-of-Array-Except-Self" data-title="LeetCode --- 6. Product of Array Except Self" data-url="http://yoursite.com/2015/11/20/LeetCode-6-Product-of-Array-Except-Self/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Du Yanguang
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
