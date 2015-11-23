@@ -3,24 +3,27 @@
 <head>
   <meta charset="utf-8">
   
-  <title>LeetCode --- 8. Implement strStr | Yanguang&#39;s blog site</title>
+  <title>LeetCode --- 9. String to Integer (atoi) | Yanguang&#39;s blog site</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="题目链接：Implement strStr()
+  <meta name="description" content="题目链接：String to Integer (atoi)
 
-Implement strStr().Returns the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.">
+Implement atoi to convert a string to an integer.
+Hint: Carefully consider all possible input cases. If you want a challenge, please do not see below and ask yourself wh">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode --- 8. Implement strStr">
-<meta property="og:url" content="http://yoursite.com/2015/11/23/LeetCode-8-Implement-strStr/index.html">
+<meta property="og:title" content="LeetCode --- 9. String to Integer (atoi)">
+<meta property="og:url" content="http://yoursite.com/2015/11/23/LeetCode-9-String-to-Integer-atoi/index.html">
 <meta property="og:site_name" content="Yanguang's blog site">
-<meta property="og:description" content="题目链接：Implement strStr()
+<meta property="og:description" content="题目链接：String to Integer (atoi)
 
-Implement strStr().Returns the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.">
-<meta property="og:updated_time" content="2015-11-23T08:08:16.760Z">
+Implement atoi to convert a string to an integer.
+Hint: Carefully consider all possible input cases. If you want a challenge, please do not see below and ask yourself wh">
+<meta property="og:updated_time" content="2015-11-23T09:21:03.466Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode --- 8. Implement strStr">
-<meta name="twitter:description" content="题目链接：Implement strStr()
+<meta name="twitter:title" content="LeetCode --- 9. String to Integer (atoi)">
+<meta name="twitter:description" content="题目链接：String to Integer (atoi)
 
-Implement strStr().Returns the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.">
+Implement atoi to convert a string to an integer.
+Hint: Carefully consider all possible input cases. If you want a challenge, please do not see below and ask yourself wh">
   
     <link rel="alternative" href="/atom.xml" title="Yanguang&#39;s blog site" type="application/atom+xml">
   
@@ -181,11 +184,11 @@ Implement strStr().Returns the index of the first occurrence of needle in haysta
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-LeetCode-8-Implement-strStr" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-LeetCode-9-String-to-Integer-atoi" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/11/23/LeetCode-8-Implement-strStr/" class="article-date">
-  	<time datetime="2015-11-23T07:56:44.000Z" itemprop="datePublished">2015-11-23</time>
+      <a href="/2015/11/23/LeetCode-9-String-to-Integer-atoi/" class="article-date">
+  	<time datetime="2015-11-23T09:11:05.000Z" itemprop="datePublished">2015-11-23</time>
 </a>
     </div>
   
@@ -198,7 +201,7 @@ Implement strStr().Returns the index of the first occurrence of needle in haysta
         
   
     <h1 class="article-title" itemprop="name">
-      LeetCode --- 8. Implement strStr
+      LeetCode --- 9. String to Integer (atoi)
     </h1>
   
 
@@ -218,13 +221,16 @@ Implement strStr().Returns the index of the first occurrence of needle in haysta
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>题目链接：<a href="https://leetcode.com/problems/implement-strstr/" target="_blank" rel="external">Implement strStr()</a></p>
+        <p>题目链接：<a href="https://leetcode.com/problems/string-to-integer-atoi/" target="_blank" rel="external">String to Integer (atoi)</a></p>
 <blockquote>
-<p>Implement strStr().<br>Returns the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.</p>
+<p>Implement atoi to convert a string to an integer.</p>
+<p><strong>Hint:</strong> Carefully consider all possible input cases. If you want a challenge, please do not see below and ask yourself what are the possible input cases.</p>
+<p><strong>Notes:</strong> It is intended for this problem to be specified vaguely (ie, no given input specs). You are responsible to gather all the input requirements up front.</p>
 </blockquote>
 <a id="more"></a>
-<h3 id="题目大意：">题目大意：</h3><p>判断字符串<code>needle</code>是否是<code>haystack</code>的子串，如果是给出第一次出现的坐标，否儿返回-1。</p>
-<h3 id="解题思路：">解题思路：</h3><p>这道题可以利用<strong>python</strong>的切片功能，从<code>haystack</code>的第一个位置开始以<code>len(needle)</code>为长度做切片，将切片的结果和<code>needle</code>进行比较，如果相同，则返回当前位置。否则从<code>haystack</code>的下一个位置继续切片比较。代码如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">strStr</span><span class="params">(self, haystack, needle)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type haystack: str</span><br><span class="line">        :type needle: str</span><br><span class="line">        :rtype: int</span><br><span class="line">        """</span></span><br><span class="line">        len_needle, len_haystack = len(needle), len(haystack)</span><br><span class="line">        <span class="keyword">if</span> len_needle &gt; len_haystack <span class="keyword">or</span> needle <span class="keyword">is</span> <span class="keyword">None</span>:</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span></span><br><span class="line"></span><br><span class="line">        j = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len_haystack - len_needle + <span class="number">1</span>):</span><br><span class="line">            <span class="keyword">if</span> haystack[i:len_needle + j] == needle:</span><br><span class="line">                <span class="keyword">return</span> i</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                j += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="题目大意：">题目大意：</h3><p>将数字字符转换成相应的数字。</p>
+<h3 id="解题思路：">解题思路：</h3><p>基本思路就是建立一个字符到数字的字典，然后从高位到低位依次取出，按如下公式计算：<br><code>result = result + atoi[i] * 10</code></p>
+<p>如果格式都符合要求，这道题目就很简单，可是在通过测试<code>OJ</code>的时候，发现这个题主要是考察对各种输入的处理，后来再<a href="https://leetcode.com/discuss/63580/60ms-python-solution-says-this-beats-100%25-python-submissions" target="_blank" rel="external">Discuss</a>中找到一个比较好的方法，代码如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">myAtoi</span><span class="params">(self, str)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type str: str</span><br><span class="line">        :rtype: int</span><br><span class="line">        """</span></span><br><span class="line">        <span class="keyword">if</span> len(str) == <span class="number">0</span>: <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        ls = list(str.strip())</span><br><span class="line"></span><br><span class="line">        atoi_dict = &#123;<span class="string">'0'</span>:<span class="number">0</span>, <span class="string">'1'</span>:<span class="number">1</span>, <span class="string">'2'</span>:<span class="number">2</span>, <span class="string">'3'</span>:<span class="number">3</span>, <span class="string">'4'</span>:<span class="number">4</span>, <span class="string">'5'</span>:<span class="number">5</span>, <span class="string">'6'</span>:<span class="number">6</span>, <span class="string">'7'</span>:<span class="number">7</span>, <span class="string">'8'</span>:<span class="number">8</span>, <span class="string">'9'</span>:<span class="number">9</span>&#125;</span><br><span class="line">        str = str.strip()</span><br><span class="line"></span><br><span class="line">        sign = -<span class="number">1</span> <span class="keyword">if</span> str[<span class="number">0</span>] == <span class="string">'-'</span> <span class="keyword">else</span> <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> ls[<span class="number">0</span>] <span class="keyword">in</span> [<span class="string">'-'</span>,<span class="string">'+'</span>] : <span class="keyword">del</span> ls[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">        result, i = <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> i &lt; len(ls) <span class="keyword">and</span> ls[i].isdigit():</span><br><span class="line">            result = result * <span class="number">10</span> + atoi_dict[ls[i]]</span><br><span class="line">            i += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> max(-<span class="number">2</span>**<span class="number">31</span>, min(sign * result,<span class="number">2</span>**<span class="number">31</span>-<span class="number">1</span>))</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -234,18 +240,18 @@ Implement strStr().Returns the index of the first occurrence of needle in haysta
     
 <nav id="article-nav">
   
-    <a href="/2015/11/23/LeetCode-9-String-to-Integer-atoi/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2015/11/23/LeetCode-10-Remove-Duplicates-from-Sorted-Array/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          LeetCode --- 9. String to Integer (atoi)
+          LeetCode --- 10. Remove Duplicates from Sorted Array
         
       </div>
     </a>
   
   
-    <a href="/2015/11/20/LeetCode-7-Valid-Anagram/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">LeetCode --- 7. Valid Anagram</div>
+    <a href="/2015/11/23/LeetCode-8-Implement-strStr/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">LeetCode --- 8. Implement strStr</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -274,7 +280,7 @@ Implement strStr().Returns the index of the first occurrence of needle in haysta
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="LeetCode-8-Implement-strStr" data-title="LeetCode --- 8. Implement strStr" data-url="http://yoursite.com/2015/11/23/LeetCode-8-Implement-strStr/"></div>
+	<div class="ds-thread" data-thread-key="LeetCode-9-String-to-Integer-atoi" data-title="LeetCode --- 9. String to Integer (atoi)" data-url="http://yoursite.com/2015/11/23/LeetCode-9-String-to-Integer-atoi/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
